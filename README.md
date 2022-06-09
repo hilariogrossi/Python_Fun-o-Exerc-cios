@@ -1,1 +1,1 @@
-# Python_Fun-o-Exerc-cios
+# Resolução de Exercícios em Python
