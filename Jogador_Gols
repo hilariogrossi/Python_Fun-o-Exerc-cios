@@ -1,0 +1,25 @@
+def ficha(n, g):
+    '''
+    O programa lê ou não nome e lê ou não os gols marcados.
+    :param n: Nome do Jogador.
+    :param g: Números de gols do Jogador.
+    :return: não há
+    '''
+    if nome == '':
+        print('O jogador <desconhecido> fez ', end='')
+    else:
+        print(f'O jogador {nome} fez ', end='')
+    if gols == '':
+        print('0 gol no campeonato.')
+    else:
+        print(f'{gols} gol(s) no campeonato.')
+
+
+nome = str(input('Nome do Jogador: '))
+gols = str(input('Número de Gols: '))
+if gols.isnumeric():
+    gols = int(gols)
+else:
+    gols = 0
+
+ficha(nome, gols)
