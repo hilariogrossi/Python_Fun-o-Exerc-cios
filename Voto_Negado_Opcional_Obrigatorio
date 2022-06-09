@@ -1,0 +1,21 @@
+def voto(ano_de_nascimento):
+    '''
+    Programa que determina com quantos anos o voto é NEGADO, OPICIONAL OU OBRIGATÓRIO.
+    :param ano_de_nascimento: O parâmetro é introduzido na inicialização do programa
+    :return: retorna as três opções de voto.
+    '''
+    from datetime import date
+    idade = (date.today().year - ano_de_nascimento)
+    if idade < 16:
+        return f'Com {idade} anos: É NEGADO o voto nas eleições!'
+    elif 16 <= idade < 18 or idade >= 65:
+        return f'Com {idade} anos: É OPCIONAL o voto nas eleições.'
+    else:
+        return f'Com {idade} anos: É OBRIGATÓRIO o voto nas eleições.'
+
+
+print('=' * 50)
+print(voto(ano_de_nascimento=int(input('Em que ano você nasceu? '))))
+print('=' * 50)
+print('{:^50}'.format('Obrigado por utilizar o software do HILÁRIO.'))
+print('=' * 50)
