@@ -1,0 +1,29 @@
+def notas(*notas_inseridas, situacao=False):
+    '''
+    ==> Função para analisar notas e situações de vários alunos.
+    :param nota: Uma ou mais notas dos alunos (aceita várias notas).
+    :param situacao: Valor opcional indicando se deve ou não adicionar a situação do aluno.
+    :return: Dicionário com várias informações sobre a situação do aluno.
+    '''
+    dicionario = {}
+    dicionario['Total'] = len(notas_inseridas)
+    dicionario['Maior'] = max(notas_inseridas)
+    dicionario['Menor'] = min(notas_inseridas)
+    dicionario['Média'] = sum(notas_inseridas)/len(notas_inseridas)
+    if situacao:
+        if dicionario['Média'] >= 9.5:
+            dicionario['Situação'] = 'EXCELENTE!'
+        elif dicionario['Média'] >= 8.5:
+            dicionario['Situação'] = 'MUITO BOA!'
+        elif dicionario['Média'] >= 7:
+            dicionario['Situação'] = 'BOA!'
+        elif dicionario['Média'] >= 5:
+            dicionario['Situação'] = 'RAZOÁVEL!'
+        else:
+            dicionario['Situação'] = 'RUIM'
+
+    return dicionario
+
+
+resposta = notas(10, 10, 8.5, 7.5, 8.0, 6.0, 9.5, situacao=True)
+print(resposta)
